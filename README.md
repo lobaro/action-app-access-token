@@ -19,7 +19,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: lobaro/github-app-token-generator@v1
+      - uses: lobaro/action-app-access-token@v1
         id: installation-token
         with:
           app-id: ${{ secrets.APP_ID }}

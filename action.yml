@@ -20,6 +20,12 @@ outputs:
 runs:
   using: composite
   steps:
+    - name: "Install Python JWT package"
+      # Install Python JWT package
+      shell: bash
+      run: |
+        echo "-- Install Python JWT package"
+        pip install jwt || exit 1
     - name: "Generate App JWT"
       # Generate a JWT token signed by the GitHub App, that can be used to call the GitHub API
       shell: python
