@@ -44,7 +44,7 @@ runs:
           github_output = os.environ["GITHUB_OUTPUT"]
           with open(github_output, "a") as f:
               f.write(f"token=none\n")
-          exit()
+          exit(1)
         signing_key = jwt.jwk_from_pem(pem)
         payload = {
             # Issued at time
