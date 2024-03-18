@@ -40,11 +40,11 @@ runs:
         app_id = "${{ inputs.app-id }}"
         pem = b"""${{ inputs.private-key }}"""
         if not app_id or not pem:
-          print("Missing app-id or pem")
-          github_output = os.environ["GITHUB_OUTPUT"]
-          with open(github_output, "a") as f:
-              f.write(f"token=none\n")
-          exit(1)
+            print("Missing app-id or pem")
+            github_output = os.environ["GITHUB_OUTPUT"]
+            with open(github_output, "a") as f:
+                f.write(f"token=none\n")
+            exit(1)
         signing_key = jwt.jwk_from_pem(pem)
         payload = {
             # Issued at time
