@@ -24,9 +24,9 @@
         "test": "echo 'no test specified' && exit 1",
         "build": "npx rimraf ./dist && npm run 'build:package'",
         "build:package": "rollup -c rollup.config.ts --configPlugin '@rollup/plugin-typescript'",
-        "biome:check": "biome check",
-        "biome:fix": "biome format --write",
-        "biome:fullfix": "biome check --write",
+        "check": "biome check --write",
+        "format": "biome format --write",
+        "typecheck": "tsc --noEmit",
         "local-action": "npx @github/local-action . src/index.ts .env"
     },
     "dependencies": {

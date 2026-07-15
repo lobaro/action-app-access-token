@@ -8,13 +8,16 @@
         "forceConsistentCasingInFileNames": true,
         "isolatedModules": true,
         "lib": ["ES2022"],
-        "module": "NodeNext",
-        "moduleResolution": "NodeNext",
+        "module": "esnext",
+        "moduleResolution": "bundler",
         "newLine": "lf",
         "noImplicitAny": true,
         "noUnusedLocals": true,
         "noUnusedParameters": false,
         "outDir": "./dist",
+        "paths": {
+            "@/*": ["./src/*"]
+        },
         "pretty": true,
         "resolveJsonModule": true,
         "strict": true,

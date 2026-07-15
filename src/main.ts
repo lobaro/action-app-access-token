@@ -29,7 +29,7 @@ export async function run(): Promise<void> {
         .then((data) => data.id)
         .catch((err) =>
             core.setFailed(
-                `failed to get installation id for repo ${repo}:${err}`,
+                `failed to get installation id for repo ${repo}: ${err}`,
             ),
         )
 
@@ -49,9 +49,10 @@ export async function run(): Promise<void> {
     )
         .then((r) => r.json() as { token?: string })
         .then((data) => data.token)
-        .catch((err) => core.setFailed(`failed to get token:${err}`))
+        .catch((err) => core.setFailed(`failed to get token: ${err}`))
 
     if (!token) {
+        core.setFailed("failed to get token: returned token is empty")
         return
     }
 
