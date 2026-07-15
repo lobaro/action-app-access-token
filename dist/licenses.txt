@@ -56,7 +56,7 @@ THE SOFTWARE.
 ---
 
 Name: undici
-Version: 6.25.0
+Version: 6.27.0
 License: MIT
 Private: false
 Description: An HTTP/1.1 client, written from scratch for Node.js
@@ -578,7 +578,7 @@ SOFTWARE.
 ---
 
 Name: semver
-Version: 7.8.2
+Version: 7.8.5
 License: ISC
 Private: false
 Description: The semantic version parser used by npm.
