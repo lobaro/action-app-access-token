@@ -34,6 +34,7 @@ export async function run(): Promise<void> {
         )
 
     if (!repoId) {
+        core.setFailed("failed to get token: returned repo id is empty")
         return
     }
 
@@ -45,6 +46,7 @@ export async function run(): Promise<void> {
                 Authorization: `Bearer ${appJwt}`,
                 "X-Github-Api-Version": "2026-03-10",
             },
+            method: "POST",
         },
     )
         .then((r) => r.json() as { token?: string })
