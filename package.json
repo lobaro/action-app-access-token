@@ -1,0 +1,55 @@
+{
+    "name": "action-app-access-token",
+    "version": "2.0.0",
+    "description": "Fetches an installation access token for a GitHub App, that can be used to clone private repositories.",
+    "homepage": "https://github.com/lobaro/action-app-access-token#readme",
+    "bugs": {
+        "url": "https://github.com/lobaro/action-app-access-token/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lobaro/action-app-access-token.git"
+    },
+    "keywords": [
+        "actions"
+    ],
+    "exports": {
+        ".": "./dist/index.js"
+    },
+    "license": "MIT",
+    "author": "Lobaro GmbH",
+    "type": "module",
+    "main": "dist/index.js",
+    "scripts": {
+        "test": "vitest run",
+        "build": "npx rimraf ./dist && npm run 'build:package'",
+        "build:package": "rollup -c rollup.config.ts --configPlugin '@rollup/plugin-typescript'",
+        "check": "biome check --write",
+        "format": "biome format --write",
+        "typecheck": "tsc --noEmit",
+        "local-action": "npx @github/local-action . src/index.ts .env"
+    },
+    "dependencies": {
+        "@actions/core": "^3.0.1",
+        "jsonwebtoken": "^9.0.3"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^2.5.4",
+        "@rollup/plugin-commonjs": "^29.0.0",
+        "@rollup/plugin-node-resolve": "^16.0.3",
+        "@rollup/plugin-terser": "^1.0.0",
+        "@rollup/plugin-typescript": "^12.3.0",
+        "@types/jsonwebtoken": "^9.0.10",
+        "@types/node": "^25.0.3",
+        "@typescript/native": "npm:typescript@^7.0.2",
+        "rollup": "^4.60.2",
+        "rollup-plugin-license": "^3.7.1",
+        "tslib": "^2.8.1",
+        "typescript": "npm:@typescript/typescript6@^6.0.2",
+        "vitest": "^4.1.10"
+    },
+    "engines": {
+        "node": "^24.0.0"
+    },
+    "packageManager": "npm@12.0.1+sha512.2f94fd8bf600416416a934bfc59c4991e8bff7372ef7d842784e2a8b8d48c81555ee645069ddea73625fb8e92dc261feab0188fd5dab6c22fefd46316f5f9140"
+}
